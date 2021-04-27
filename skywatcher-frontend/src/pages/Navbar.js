@@ -11,8 +11,8 @@ const Navbar = () => {
                 <ReactBootStrap.Nav className="mr-auto">
                         </ReactBootStrap.Nav>
                         <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link href="#deets">API Page</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
+                        <ReactBootStrap.Nav.Link href="#api">API Page</ReactBootStrap.Nav.Link>
+                        <ReactBootStrap.Nav.Link eventKey={2} href="#about">
                             About
                         </ReactBootStrap.Nav.Link>
                         </ReactBootStrap.Nav>
