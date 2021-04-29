@@ -25,6 +25,27 @@ const DisplayCard = () => {
 
           </Card.Body>
         </Card>
+
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Text className="air-quality"> Air Quality </Card.Text>
+
+          </Card.Body>
+        </Card>
+
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Text className="traffic"> Traffic </Card.Text>
+
+          </Card.Body>
+        </Card>
+
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Text className="school-closing">School Closing </Card.Text>
+
+          </Card.Body>
+        </Card>
     </Container>
     
   )
