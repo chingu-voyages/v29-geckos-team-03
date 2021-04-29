@@ -11,7 +11,7 @@ const DisplayCard = () => {
         <i className="fas fa-sun" style={{fontSize:24}}></i>
                 
       </Jumbotron>
-      <Card style={{ width: '18rem' }}>
+      <Card className="current-forcast" style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Text className="feels"> Feels Like </Card.Text>
             <Card.Title id="degree">15</Card.Title>
@@ -26,30 +26,30 @@ const DisplayCard = () => {
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem' }}>
+        <Card className="air-quality" style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Text className="air-quality"> Air Quality </Card.Text>
+            <Card.Text> Air Quality </Card.Text>
 
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem' }}>
+        <Card className="traffic" style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Text className="traffic"> Traffic </Card.Text>
+            <Card.Text> Traffic </Card.Text>
 
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem' }}>
+        <Card className="school-closing" style={{ width: '18rem' }}>
           <Card.Body>
-            <Card.Text className="school-closing">School Closing </Card.Text>
+            <Card.Text>School Closing </Card.Text>
 
           </Card.Body>
         </Card>
 
         
         
-        <Card style={{ width: '25rem' }}>
+        <Card className="by-day-forcast" style={{ width: '25rem' }}>
           <Card.Body>
             <Row xs={2} md={4} lg={6}>
               <Col>Day</Col>
@@ -78,7 +78,7 @@ const DisplayCard = () => {
           </Card.Body>
         </Card>
 
-        <Card style={{ width: '18rem' }}>
+        <Card className="other" style={{ width: '18rem' }}>
           <Card.Body>
             <Card.Text className="school-closing">Other</Card.Text>
 
