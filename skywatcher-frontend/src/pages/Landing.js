@@ -1,13 +1,17 @@
 import React from 'react'
-import { Container, Jumbotron } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
+import DisplayCard from './DisplayCard.js'
+import '../index.css';
+import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 const Landing = () => {
   return (
     <Container fluid>
-      <Jumbotron>
-        <h1>Welcome to Skywatcher</h1>
-      </Jumbotron>
+      
+      <DisplayCard />
+     
     </Container>
+    
   )
 }
 
