@@ -62,3 +62,8 @@ i{
 .by-day-forcast{
   flex-basis: 600px;
 }
+
+.weather-info{
+  margin-left:20px;
+}
+

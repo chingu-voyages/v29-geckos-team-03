@@ -1,14 +1,18 @@
 import React from 'react'
 import { Container, Jumbotron, Card, Row, Col} from 'react-bootstrap'
 import '../index.css';
-import '../../node_modules/font-awesome/css/font-awesome.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faSun)
 
 const DisplayCard = () => {
   return (
     <Container fluid>
       <Jumbotron>
         <h1>Welcome to Skywatcher</h1>
-        <i className="fas fa-sun" style={{fontSize:24}}></i>
+       
                 
       </Jumbotron>
       <div class="weather-display-container">
@@ -18,7 +22,7 @@ const DisplayCard = () => {
                       <Card.Text className="feels"> Feels Like </Card.Text>
                       <Card.Title id="degree">15</Card.Title>
                       <div className="weather-icon"> 
-                          <i className="fas fa-sun" style={{fontSize:24}}></i>
+                          <FontAwesomeIcon icon={"sun"} style={{fontSize:80}}/>
                           <div className="weather-info"> 
                             <Card.Text>17/13</Card.Text>
                             <Card.Text>Precipitation: 100%</Card.Text>
@@ -66,12 +70,12 @@ const DisplayCard = () => {
                   </Row>
 
                   <Row xs={2} md={4} lg={6}>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
-                    <Col><i className="fas fa-sun" style={{fontSize:24}}></i></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
+                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
                   </Row>
 
                   <Row xs={2} md={4} lg={6}>
