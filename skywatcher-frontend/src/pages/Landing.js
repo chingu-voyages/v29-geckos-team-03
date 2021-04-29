@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Jumbotron, Card} from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
 import DisplayCard from './DisplayCard.js'
 import '../index.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
