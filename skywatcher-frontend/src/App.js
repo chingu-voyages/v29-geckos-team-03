@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Landing from './pages/Landing';
-import  Navbar from './pages/Navbar';
+import  Navbar from './components/Navbar';
 
 function App() {
   return (
