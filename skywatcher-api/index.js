@@ -1,5 +1,5 @@
 import express from 'express'
-import routes from './src/routes/weatherRoutes'
+import routes from './src/routes/locationRoutes'
 import mongoose from 'mongoose'
 require('dotenv').config()
 
