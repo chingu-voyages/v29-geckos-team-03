@@ -1,7 +1,7 @@
 import React from 'react'
 import useFetch from "../services/UseFetch";
 
-const api_url = 'http://localhost:4000/'
+const api_url = 'http://localhost:4000/weather'
 
 const InteractWithData = () => {
   const { data, error, loading } = useFetch(api_url)

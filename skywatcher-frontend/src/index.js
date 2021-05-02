@@ -6,7 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ErrorBoundary from './error-handling/ErrorBoundary';
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
 
+Sentry.init({
+  dsn: "https://d9c8c150230448f8bb45e2899c26d593@o603652.ingest.sentry.io/5744555",
+  integrations: [new Integrations.BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
 
 ReactDOM.render(
   <React.StrictMode>
