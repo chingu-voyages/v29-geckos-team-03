@@ -5,65 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-#degree{
-  font-size: 40px;
-}
-
-i{
-  width: 30px !important;
-}
-
-/* Flex box */
-.weather-display-container{
-  display: flex;
-  text-align: center;
-
-}
-
-.weather-icon{
-  display: flex;
-}
-
-.card{
-  box-shadow: 5px 10px 10px 1px rgba(190,190,190,1)!important
-}
-
-.card:hover{
-  box-shadow: 5px 10px 20px 1px rgba(190,190,190,1)!important
-}
-
-.current-weather{
-  padding-right:50px;
-}
-.weather-detail{
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin-right:50px;
-
-}
-
-.air-quality, .traffic , .by-day-forcast {
-  margin-right: 20px;
-}
- .by-day-forcast, .other{
-  margin-top: 20px;
-}
-
-
-.by-day-forcast{
-  flex-basis: 600px;
-}
-
-.weather-info{
-  margin-left:20px;
-}
-
