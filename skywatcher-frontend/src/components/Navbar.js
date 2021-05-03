@@ -1,6 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import "../App.js";
+import { Button } from "react-bootstrap";
 
 const Navbar = () => {
     return (
@@ -11,10 +12,14 @@ const Navbar = () => {
                 <ReactBootStrap.Nav className="mr-auto">
                         </ReactBootStrap.Nav>
                         <ReactBootStrap.Nav>
+                    <Button variant="outline-dark" size="sm">{" "}
                         <ReactBootStrap.Nav.Link href="#api">API Page</ReactBootStrap.Nav.Link>
+                    </Button>
+                    <Button variant="outline-dark" size="sm">
                         <ReactBootStrap.Nav.Link eventKey={2} href="#about">
                             About
                         </ReactBootStrap.Nav.Link>
+                        </Button>
                         </ReactBootStrap.Nav>
                     </ReactBootStrap.Navbar.Collapse>
                     </ReactBootStrap.Navbar>
