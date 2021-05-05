@@ -1,10 +1,14 @@
 import express from 'express'
 import routes from './src/routes/weatherRoutes'
 import mongoose from 'mongoose'
+import cors from 'cors'
+
 require('dotenv').config()
 
 const app = express()
 const PORT = 4000
+
+app.use(cors)
 
 // mongoose connection
 mongoose.Promise = global.Promise
