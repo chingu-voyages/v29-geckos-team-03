@@ -34,7 +34,7 @@ const InteractWithData = () => {
             <Card.Header as="h4">JSON Data</Card.Header>
             <Card.Body>
               <Card.Text>
-                <ReactJson src={data} />
+                <ReactJson src={data} theme="monokai" />
               </Card.Text>
             </Card.Body>
           </Card>
