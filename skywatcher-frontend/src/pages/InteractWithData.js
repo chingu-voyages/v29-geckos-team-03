@@ -5,7 +5,8 @@ import useFetch from "../services/UseFetch";
 
 const apis = {
   location: 'http://localhost:4000/location',
-  weather: 'http://localhost:4000/weather'
+  weather: 'http://localhost:4000/weather',
+  openweather: 'api.openweathermap.org/data/2.5/forecast?q=Denver&appid=${process.env.REACT_APP_OPEN_WEATHER_API}',
 }
 
 
