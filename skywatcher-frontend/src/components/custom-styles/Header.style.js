@@ -7,7 +7,6 @@ export const HeaderContainer = styled.header`
   background-color: rgba(20,20,30,.8);
   border-radius: .5rem;
   text-align: center;
-  justify
 `
 
 export const HeaderText = styled.h2`
