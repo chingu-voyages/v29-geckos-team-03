@@ -14,14 +14,25 @@ export const CTHeader = styled.header`
   background-color: rgba(20,20,30,.5);
   border-radius: .5rem;
   vertical-align: center;
-`
-
-export const CTHeaderTitle = styled.h2`
   color: white;
-  font-size: 1.5em;
 `
-
+export const CTHeaderTitle = styled.h2`
+  font-size: 1.7em;
+`
+export const CTHeaderTime = styled.p`
+  font-size: 1em;
+  color: #eef;
+  font-style: italic;
+`
 export const CTHeaderDaysButton = styled.button`
   border: 1em;
-  font-size: 1em;
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  width: 10%;
+  color: rgba(200,200,200,0.8);
+  background-color: rgba(0,0,0,0.4);
+  font-size: 1rem;
+  &:first-of-type {
+    color: #eef;
+  }
 `

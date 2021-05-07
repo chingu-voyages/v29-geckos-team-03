@@ -2,19 +2,18 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Card, Form } from 'react-bootstrap'
 import ReactJson from 'react-json-view'
 import useFetch from "../../services/UseFetch";
-import { HeaderContainer, HeaderText } from '../../components/custom-styles/Header.style'
+import { HeaderContainer, HeaderText } from './InteractWithData.style'
 
 const apis = {
-  location: { name: 'location', url: 'http://localhost:4000/location' },
-  weather: { name: 'weather', url: 'http://localhost:4000/weather' },
+  // location: { name: 'location', url: 'http://localhost:4000/location' },
+  // weather: { name: 'weather', url: 'http://localhost:4000/weather' },
   openweather: { name: 'openweather', url: `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.REACT_APP_OPEN_WEATHER_API}` }
 }
 
 const InteractWithData = () => {
-  const [apiUrl, setApiUrl] = useState(apis.location.url)
+  const [apiUrl, setApiUrl] = useState(apis.openweather.url)
   const [apiName, setApiName] = useState("")
   const { data, error, loading } = useFetch(apiUrl)
-  console.log(apis.openweather)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -55,7 +54,7 @@ const InteractWithData = () => {
           <Card>
             <Card.Header as="h4">JSON Data</Card.Header>
             <Card.Body>
-              <ReactJson src={data} theme="monokai" />
+              <ReactJson src={data} theme="monokai" style={{ maxHeight: '60vh', overflow: 'auto' }} />
             </Card.Body>
           </Card>
         </Col>
