@@ -11,6 +11,7 @@ class CurrentWeather extends React.Component {
       loading:true,
       feelsLike:null,
       wind:null,
+      weatherIcon: null,
   }
 
   async componentDidMount(){
@@ -19,8 +20,9 @@ class CurrentWeather extends React.Component {
     const data = await response.json()
     this.setState({ feelsLike: data.main, loading: false})
     this.setState({ wind: data.wind, loading: false})
+    this.setState({ weatherIcon: data.weather[0].main, loading: false})
     
-    console.log(data)
+    console.log(data.weather[0].icon)
   }
 
   render(){
@@ -39,7 +41,8 @@ class CurrentWeather extends React.Component {
                       <Card.Text className="feels"> Feels Like </Card.Text>
                       <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
                       <div className="weather-icon"> 
-                          <FontAwesomeIcon icon={"sun"} style={{fontSize:80}}/>
+                          <Card.Text>{this.state.weatherIcon}</Card.Text>
+                          {/* <FontAwesomeIcon icon={"sun"} style={{fontSize:80}}/> */}
                           <div className="weather-info"> 
                             <Card.Text>{this.state.feelsLike.temp_max}/{this.state.feelsLike.temp_min}</Card.Text>
                             <Card.Text>Precipitation: 100%</Card.Text>
