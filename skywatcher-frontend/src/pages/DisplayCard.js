@@ -17,9 +17,11 @@ const DisplayCard = () => {
                 
       </Jumbotron>
       <div class="weather-display-container">
+        <div className="current-weather ">
             <CurrentWeather />
+        </div>
 
-            <div className="weather-detail">
+        <div className="weather-detail">
               <Card className="air-quality" style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Text> Air Quality </Card.Text>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Jumbotron, Card, Row, Col} from 'react-bootstrap'
+import { Card} from 'react-bootstrap'
 import '../index.css';
 
 class CurrentWeather extends React.Component {
@@ -31,7 +31,6 @@ class CurrentWeather extends React.Component {
     }
       return(
          
-            <div className="current-weather ">
                 <Card className="current-forcast" style={{ width: '18rem' }}>
                     <Card.Body>
                       <Card.Text className="feels"> Feels Like </Card.Text>
@@ -48,7 +47,7 @@ class CurrentWeather extends React.Component {
                       </div>
                     </Card.Body>
                   </Card>
-            </div>
+          
 
 
             
