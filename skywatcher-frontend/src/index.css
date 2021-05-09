@@ -35,11 +35,12 @@ i{
 }
 
 .card{
-  box-shadow: 5px 10px 10px 1px rgba(190,190,190,1)!important
+  /* box-shadow: 5px 10px 10px 1px rgba(190,190,190,1)!important */
+ 
 }
 
 .card:hover{
-  box-shadow: 5px 10px 20px 1px rgba(190,190,190,1)!important
+  /* box-shadow: 5px 10px 20px 1px rgba(190,190,190,1)!important */
 }
 
 .current-weather{
@@ -51,6 +52,10 @@ i{
   flex-wrap: wrap;
   margin-right:50px;
 
+}
+.current-forcast{
+  height:300px;
+  width: auto;
 }
 
 .air-quality, .traffic , .by-day-forcast {
