@@ -4,6 +4,7 @@ import '../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import WeeklyForcast from './WeeklyForcast';
 
 library.add(faSun)
 
@@ -17,7 +18,8 @@ const DisplayCard = () => {
       </Jumbotron>
       <div class="weather-display-container">
             <div className="current-weather ">
-                <Card className="current-forcast" style={{ width: '18rem' }}>
+              <WeeklyForcast/>
+                {/* <Card className="current-forcast" style={{ width: '18rem' }}>
                     <Card.Body>
                       <Card.Text className="feels"> Feels Like </Card.Text>
                       <Card.Title id="degree">15</Card.Title>
@@ -31,7 +33,7 @@ const DisplayCard = () => {
                           </div>
                       </div>
                     </Card.Body>
-                  </Card>
+                  </Card> */}
             </div>
 
             <div className="weather-detail">
