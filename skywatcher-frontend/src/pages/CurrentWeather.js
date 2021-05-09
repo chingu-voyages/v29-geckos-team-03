@@ -20,7 +20,7 @@ class CurrentWeather extends React.Component {
     const data = await response.json()
     this.setState({ feelsLike: data.main, loading: false})
     this.setState({ wind: data.wind, loading: false})
-    this.setState({ weatherIcon: data.weather[0].main, loading: false})
+    this.setState({ weatherIcon: data.weather[0].icon, loading: false})
     
     console.log(data)
   }
@@ -41,8 +41,7 @@ class CurrentWeather extends React.Component {
                       <Card.Text className="feels"> Feels Like </Card.Text>
                       <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
                       <div className="weather-icon"> 
-                          <Card.Text>{this.state.weatherIcon}</Card.Text>
-                          {/* <FontAwesomeIcon icon={"sun"} style={{fontSize:80}}/> */}
+                          <img src={`http://openweathermap.org/img/w/${this.state.weatherIcon}.png`}/>
                           <div className="weather-info"> 
                             <Card.Text>{this.state.feelsLike.temp_max}/{this.state.feelsLike.temp_min}</Card.Text>
                             <Card.Text>Precipitation: 100%</Card.Text>
