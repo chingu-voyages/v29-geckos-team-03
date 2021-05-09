@@ -1,10 +1,6 @@
 import React from 'react'
 import { Container, Jumbotron, Card, Row, Col} from 'react-bootstrap'
 import '../index.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun } from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-
 
 class CurrentWeather extends React.Component {
   state = {
@@ -42,6 +38,7 @@ class CurrentWeather extends React.Component {
                       <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
                       <div className="weather-icon"> 
                           <img src={`http://openweathermap.org/img/w/${this.state.weatherIcon}.png`}/>
+
                           <div className="weather-info"> 
                             <Card.Text>{this.state.feelsLike.temp_max}/{this.state.feelsLike.temp_min}</Card.Text>
                             <Card.Text>Precipitation: 100%</Card.Text>
