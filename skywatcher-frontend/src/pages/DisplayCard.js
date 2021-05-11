@@ -4,6 +4,8 @@ import '../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import WeeklyForcast from './WeeklyForcast';
+import CurrentWeather from './CurrentWeather';
 
 library.add(faSun)
 
@@ -16,25 +18,11 @@ const DisplayCard = () => {
                 
       </Jumbotron>
       <div class="weather-display-container">
-            <div className="current-weather ">
-                <Card className="current-forcast" style={{ width: '18rem' }}>
-                    <Card.Body>
-                      <Card.Text className="feels"> Feels Like </Card.Text>
-                      <Card.Title id="degree">15</Card.Title>
-                      <div className="weather-icon"> 
-                          <FontAwesomeIcon icon={"sun"} style={{fontSize:80}}/>
-                          <div className="weather-info"> 
-                            <Card.Text>17/13</Card.Text>
-                            <Card.Text>Precipitation: 100%</Card.Text>
-                            <Card.Text>Humidity: 67% </Card.Text>
-                            <Card.Text>Wind: 2m/s</Card.Text>
-                          </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-            </div>
+        <div className="current-weather ">
+            <CurrentWeather />
+        </div>
 
-            <div className="weather-detail">
+        <div className="weather-detail">
               <Card className="air-quality" style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Text> Air Quality </Card.Text>
@@ -59,36 +47,8 @@ const DisplayCard = () => {
               
               
               <Card className="by-day-forcast" style={{ width: '25rem' }}>
-                <Card.Body>
-                  <Row xs={2} md={4} lg={6}>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                  </Row>
-
-                  <Row xs={2} md={4} lg={6}>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                  </Row>
-
-                  <Row xs={2} md={4} lg={6}>
-                    <Col>13</Col>
-                    <Col>15</Col>
-                    <Col>17</Col>
-                    <Col>14</Col>
-                    <Col>14</Col>
-                    <Col>16</Col>
-                  </Row>
-              
-                </Card.Body>
-              </Card>
+                <WeeklyForcast />
+            </Card>
 
               <Card className="other" style={{ width: '18rem' }}>
                 <Card.Body>
