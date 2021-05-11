@@ -11,7 +11,7 @@ class WeeklyForcast extends React.Component {
   }
 
   async componentDidMount(){
-    const api_url = `https://api.openweathermap.org/data/2.5/forecast?q=new%20york&cnt=40&units=metric&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`
+    const api_url = `https://api.openweathermap.org/data/2.5/forecast?q=new%20york&cnt=40&units=metric&appid=0aeeb80f1822726609f7a5570cc0992c`
     const response = await fetch(api_url);
     const data = await response.json()
 

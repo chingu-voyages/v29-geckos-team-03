@@ -11,7 +11,7 @@ class CurrentWeather extends React.Component {
   }
 
   async componentDidMount(){
-    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=new%20york&&units=metric&appid=0aeeb80f1822726609f7a5570cc0992c`
+    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=new%20york&&units=metric&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`
     const response = await fetch(api_url);
     const data = await response.json()
     this.setState({ feelsLike: data.main, loading: false})

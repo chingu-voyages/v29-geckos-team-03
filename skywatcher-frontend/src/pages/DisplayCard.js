@@ -4,7 +4,8 @@ import '../index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import CurrentWeather from './CurrentWeather.js'
+import WeeklyForcast from './WeeklyForcast';
+import CurrentWeather from './CurrentWeather';
 
 library.add(faSun)
 
@@ -46,36 +47,8 @@ const DisplayCard = () => {
               
               
               <Card className="by-day-forcast" style={{ width: '25rem' }}>
-                <Card.Body>
-                  <Row xs={2} md={4} lg={6}>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                    <Col>Day</Col>
-                  </Row>
-
-                  <Row xs={2} md={4} lg={6}>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                    <Col><FontAwesomeIcon icon={"sun"} style={{fontSize:24}}/></Col>
-                  </Row>
-
-                  <Row xs={2} md={4} lg={6}>
-                    <Col>13</Col>
-                    <Col>15</Col>
-                    <Col>17</Col>
-                    <Col>14</Col>
-                    <Col>14</Col>
-                    <Col>16</Col>
-                  </Row>
-              
-                </Card.Body>
-              </Card>
+                <WeeklyForcast />
+            </Card>
 
               <Card className="other" style={{ width: '18rem' }}>
                 <Card.Body>
