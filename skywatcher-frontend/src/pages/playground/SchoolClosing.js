@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import LandingHeader from "./CityTimeHeader";
+import LandingHeader from "../../components/city-time-header/CityTimeHeader";
 import useFetch from "../../services/UseFetch";
 
 const api_url = `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`;
