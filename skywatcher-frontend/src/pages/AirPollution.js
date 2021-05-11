@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 import useFetch from "../services/UseFetch";
 
-const AirPollution_url = "http://localhost:4000/traffic";
+const AirPollution_url = "http://localhost:4000/AirPollution";
 
 const AirPollution = () => {
   const { data, error, loading } = useFetch(AirPollution_url);
