@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, FormControl, Row, Form } from "react-bootstrap";
+import { Col, Row, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,11 +9,16 @@ import {
   CTHeader,
   CTHeaderTitle,
   CTHeaderTime,
-} from "./CityTimeHeader.style";
+  CTFormControl,
+} from "../CustomStyling";
+import { useFetchWeatherForecast } from "../../services/ApiHelpers";
 
-const LandingHeader = ({ city, list }) => {
+const CityTimeHeader = ({ city, setCity }) => {
   const [currentTime, setCurrentTime] = useState(Date());
   const [editState, setEditState] = useState(false);
+  const [cityName, setCityName] = useState(city);
+
+  const { data, error, loading } = useFetchWeatherForecast(city);
 
   useEffect(() => {
     let timer = setInterval(() => setCurrentTime(Date()), 1000);
@@ -25,8 +30,11 @@ const LandingHeader = ({ city, list }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setEditState(!editState);
+    setCity(e.target.value);
   };
 
+  if (loading) return <p>Still Loading!</p>;
+  if (error) throw error;
   return (
     <CTHeader as={Row}>
       <Col md={6} xs={12}>
@@ -44,14 +52,13 @@ const LandingHeader = ({ city, list }) => {
           )}
           {editState ? (
             <Form onSubmit={handleSubmit}>
-              <FormControl
-                value={city}
-                onChange={(e) => e.target.value}
-                style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
+              <CTFormControl
+                value={cityName}
+                onChange={(e) => setCityName(e.target.value)}
               />
             </Form>
           ) : (
-            city.name
+            cityName
           )}
         </CTHeaderTitle>
       </Col>
@@ -60,7 +67,7 @@ const LandingHeader = ({ city, list }) => {
           <CTHeaderTime>{currentTime}</CTHeaderTime>
         </Row>
         <Row className="justify-content-center">
-          {distinctApiDays(list).map((dt, idx) => (
+          {distinctApiDays(data.list).map((dt, idx) => (
             <CTHeaderDaysButton key={`${dt}-${idx}-button`}>
               {dt}
             </CTHeaderDaysButton>
@@ -71,4 +78,4 @@ const LandingHeader = ({ city, list }) => {
   );
 };
 
-export default LandingHeader;
+export default CityTimeHeader;
