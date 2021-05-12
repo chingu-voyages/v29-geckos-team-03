@@ -12,8 +12,8 @@ import TBD from "../components/cards/TBD";
 
 const Landing = () => {
   const [city, setCity] = useState("New York");
-  const [lat, setLat] = useState(0);
-  const [lon, setLon] = useState(0);
+  const [lat, setLat] = useState(40.7143);
+  const [lon, setLon] = useState(-74.006);
 
   return (
     <LandingContainer>
