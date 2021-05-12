@@ -13,6 +13,10 @@ const apis = {
     name: "AirPollution",
     url: `http://api.openweathermap.org/data/2.5/air_pollution?lat=40.7143&lon=-74.006&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
   },
+  WeatherAlerts: {
+    name: "WeatherAlerts",
+    url: `https://api.openweathermap.org/data/2.5/onecall?lat=40.7143&lon=-74.006&exclude=current,minutely,hourly,daily&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
+  },
 };
 
 const InteractWithData = () => {
