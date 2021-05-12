@@ -28,7 +28,7 @@ const Landing = () => {
               <AirPollution lat={lat} lon={lon} />
             </Col>
             <Col lg={4} xs={12}>
-              <WeatherAlerts />
+              <WeatherAlerts lat={lat} lon={lon} />
             </Col>
             <Col lg={4} xs={12}>
               <WeatherMap />

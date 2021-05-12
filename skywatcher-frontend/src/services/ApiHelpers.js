@@ -2,6 +2,7 @@ import useFetch from "./UseFetch";
 
 const apiKey = process.env.REACT_APP_OPEN_WEATHER_API;
 const cityName = "New York";
+const exclusions = "current,minutely,hourly,daily";
 
 // API for fetching current weather
 export const useFetchCurrentWeather = (city = cityName) =>
@@ -17,6 +18,11 @@ export const useFetchWeatherForecast = (city = cityName) =>
 export const useFetchAirPollution = ({ lat, lon }) =>
   useFetch(
     `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
+  );
+
+export const useFetchWeatherAlerts = ({ lat, lon }) =>
+  useFetch(
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclusions}&appid=${apiKey}`
   );
 
 export const useFetchWeatherData = ({ lat, lon, exclusions }) =>
