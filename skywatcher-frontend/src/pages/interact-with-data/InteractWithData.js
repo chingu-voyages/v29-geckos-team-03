@@ -5,13 +5,10 @@ import useFetch from "../../services/UseFetch";
 import { HeaderContainer, HeaderText } from "./InteractWithData.style";
 
 const apis = {
-  // location: { name: 'location', url: 'http://localhost:4000/location' },
-  // weather: { name: 'weather', url: 'http://localhost:4000/weather' },
   openweather: {
     name: "openweather",
     url: `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
   },
-  // Traffic: { name: 'traffic', url: 'http://localhost:4000/traffic' },
   AirPollution: {
     name: "AirPollution",
     url: `http://api.openweathermap.org/data/2.5/air_pollution?lat=40.7143&lon=-74.006&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
