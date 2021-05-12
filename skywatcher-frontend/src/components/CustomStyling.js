@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const CTHeader = styled.header`
   border: 1em;
   padding: 1rem;
-  margin-top: 10vh;
+  margin-top: 5vh;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
   vertical-align: center;
@@ -66,9 +66,10 @@ export const StyledFooter = styled.footer`
   text-align: center;
   bottom: 0;
   left: 0;
-  height: 5vh;
+  height: 5%;
   width: 100vw;
   color: white;
   position: fixed;
-  padding: auto;
+  font-size: 1rem;
+  padding: 1%;
 `;

@@ -9,7 +9,6 @@ const Navbar = () => {
       expand="sm"
       bg="dark"
       variant="dark"
-      fixed="top"
     >
       <ReactBootStrap.Navbar.Brand as={Link} to="/">
         Skywatcher
