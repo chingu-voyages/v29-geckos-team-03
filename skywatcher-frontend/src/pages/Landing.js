@@ -31,7 +31,7 @@ const Landing = () => {
               <WeatherAlerts lat={lat} lon={lon} />
             </Col>
             <Col lg={4} xs={12}>
-              <WeatherMap />
+              <WeatherMap lat={lat} lon={lon} />
             </Col>
           </Row>
           <Row>
