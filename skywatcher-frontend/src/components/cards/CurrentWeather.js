@@ -43,9 +43,8 @@ class CurrentWeather extends React.Component {
           <CardTitle> Feels Like </CardTitle>
           <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
           <CWInfo>
-            <Card.Text>
-              {this.state.feelsLike.temp_max}/{this.state.feelsLike.temp_min}
-            </Card.Text>
+            <Card.Text>H {this.state.feelsLike.temp_max}</Card.Text>
+            <Card.Text>L {this.state.feelsLike.temp_min}</Card.Text>
             <Card.Text>Precipitation: 100%</Card.Text>
             <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
             <Card.Text>Wind:{this.state.windSpeed}</Card.Text>

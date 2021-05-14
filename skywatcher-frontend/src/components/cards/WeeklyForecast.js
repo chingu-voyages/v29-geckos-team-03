@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { StyledCard } from "../CustomStyling";
+import ToDayShort from "../../services/DateHelpers.js";
 
 class WeeklyForecast extends React.Component {
   state = {
@@ -40,7 +41,7 @@ class WeeklyForecast extends React.Component {
       <StyledCard>
         <Card.Body>
           <Row xs={2} md={4} lg={6}>
-            <Col>{this.state.day.dt_txt}</Col>
+            <Col>{(this.ToDayShort = this.state.day.dt_txt)}</Col>
           </Row>
 
           <Row xs={2} md={4} lg={6}>
