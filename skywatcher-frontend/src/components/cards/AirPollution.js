@@ -41,10 +41,9 @@ const AirPollution = ({ lat, lon }) => {
        )) */}
       {defaultPollutant.map((item) => (
         <>
-          <p>{item.alias}</p>
-          <p>{item.name}</p>
-          <p>{item.value}</p>
-          <p>{item.units}</p>
+          <p>
+            {item.alias},{item.name},{item.value},{item.units}
+          </p>
         </>
       ))}
     </StyledCard>
