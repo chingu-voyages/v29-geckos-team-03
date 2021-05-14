@@ -41,10 +41,16 @@ class CurrentWeather extends React.Component {
             alt="Weather Icon"
           />
           <CardTitle> Feels Like </CardTitle>
-          <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
+          <Card.Title id="degree">
+            {Number(this.state.feelsLike.feels_like).toFixed(0)}
+          </Card.Title>
           <CWInfo>
-            <Card.Text>H {this.state.feelsLike.temp_max}</Card.Text>
-            <Card.Text>L {this.state.feelsLike.temp_min}</Card.Text>
+            <Card.Text>
+              H {Number(this.state.feelsLike.temp_max).toFixed(0)}
+            </Card.Text>
+            <Card.Text>
+              L {Number(this.state.feelsLike.temp_min).toFixed(0)}
+            </Card.Text>
             <Card.Text>Precipitation: 100%</Card.Text>
             <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
             <Card.Text>Wind:{this.state.windSpeed}</Card.Text>
