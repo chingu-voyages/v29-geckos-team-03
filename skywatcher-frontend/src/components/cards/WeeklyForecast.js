@@ -26,7 +26,7 @@ class WeeklyForecast extends React.Component {
       // console.log(data.list[i].main.temp)
       // console.log(data.list[i].dt_txt)
 
-      console.log(data);
+      // console.log(data);
     }
   }
   render() {
