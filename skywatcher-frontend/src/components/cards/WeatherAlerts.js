@@ -20,10 +20,10 @@ const WeatherAlerts = ({ lat, lon }) => {
     <StyledCard>
       <CardTitle>Weather Alerts</CardTitle>
       <>
-        <p>Timezone {alerts[0].timezone}</p>
-        <p>Latuide {alerts[0].lat}</p>
-        <p>Longitude {alerts[0].lon}</p>
-        <p>Timezone offset {alerts[0].timezone_offset}</p>
+        <p>Timezone: {alerts[0].timezone}</p>
+        <p>Latuide: {alerts[0].lat}</p>
+        <p>Longitude: {alerts[0].lon}</p>
+        <p>Timezone offset: {alerts[0].timezone_offset}</p>
       </>
     </StyledCard>
   );
