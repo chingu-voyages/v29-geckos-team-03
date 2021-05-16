@@ -22,8 +22,6 @@ class CurrentWeather extends React.Component {
     });
     this.setState({ windSpeed: data.wind.speed, loading: false });
     this.setState({ weatherIcon: data.weather[0].icon, loading: false });
-
-    console.log(data.wind.speed);
   }
 
   render() {
