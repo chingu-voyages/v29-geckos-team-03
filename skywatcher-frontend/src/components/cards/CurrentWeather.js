@@ -20,10 +20,8 @@ class CurrentWeather extends React.Component {
       feelsLike: data.main,
       loading: false,
     });
-    this.setState({ wind: data.wind, loading: false });
+    this.setState({ windSpeed: data.wind.speed, loading: false });
     this.setState({ weatherIcon: data.weather[0].icon, loading: false });
-
-    console.log(data);
   }
 
   render() {
@@ -41,14 +39,19 @@ class CurrentWeather extends React.Component {
             alt="Weather Icon"
           />
           <CardTitle> Feels Like </CardTitle>
-          <Card.Title id="degree">{this.state.feelsLike.feels_like}</Card.Title>
+          <Card.Title id="degree">
+            {Number(this.state.feelsLike.feels_like).toFixed(0)}
+          </Card.Title>
           <CWInfo>
             <Card.Text>
-              {this.state.feelsLike.temp_max}/{this.state.feelsLike.temp_min}
+              H {Number(this.state.feelsLike.temp_max).toFixed(0)}
+            </Card.Text>
+            <Card.Text>
+              L {Number(this.state.feelsLike.temp_min).toFixed(0)}
             </Card.Text>
             <Card.Text>Precipitation: 100%</Card.Text>
             <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
-            <Card.Text>Wind: 2m/s {this.state.feelsLike.wind}</Card.Text>
+            <Card.Text>Wind:{this.state.windSpeed}</Card.Text>
           </CWInfo>
         </Card.Body>
       </StyledCard>
