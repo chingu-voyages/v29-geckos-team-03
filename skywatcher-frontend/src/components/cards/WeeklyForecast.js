@@ -1,11 +1,7 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { StyledCard } from "../CustomStyling";
-import {
-  ToDayShort,
-  ToDate,
-  distinctApiDays,
-} from "../../services/DateHelpers.js";
+import { ToDayShort, ToDate } from "../../services/DateHelpers.js";
 
 // Use distinctApiDays to get list of days e.g. distinctApiDays(data.list) where data.list is the array returned by the API
 class WeeklyForecast extends React.Component {
@@ -27,8 +23,6 @@ class WeeklyForecast extends React.Component {
       weatherIcon: data.daily.weather,
       loading: false,
     });
-
-    console.log(data.daily[0]);
   }
 
   render() {
