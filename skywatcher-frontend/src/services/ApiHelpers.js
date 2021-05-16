@@ -3,6 +3,7 @@ import useFetch from "./UseFetch";
 const apiKey = process.env.REACT_APP_OPEN_WEATHER_API;
 const cityName = "New York";
 const exclusions = "current,minutely,hourly,daily";
+const exclusions_daily = "current,minutely,hourly,alerts";
 
 // API for fetching current weather
 export const useFetchCurrentWeather = (city = cityName) =>
@@ -25,9 +26,14 @@ export const useFetchWeatherAlerts = ({ lat, lon }) =>
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclusions}&appid=${apiKey}`
   );
 
-export const useFetchWeatherData = ({ lat, lon, exclusions }) =>
+export const useFetchWeatherData = ({ lat, lon, unit }) =>
   useFetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclusions}&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclusions}&units=${unit}&appid=${apiKey}`
+  );
+
+export const useFetchWeatherDaily = (lat, lon, unit) =>
+  useFetch(
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclusions_daily}&units=${unit}&appid=${apiKey}`
   );
 
 export const useFetchWeatherMap = ({ layer, zoom, x_tile, y_tile }) =>

@@ -9,11 +9,13 @@ import WeatherMap from "../components/cards/WeatherMap";
 import WeatherAlerts from "../components/cards/WeatherAlerts";
 import WeeklyForecast from "../components/cards/WeeklyForecast";
 import TBD from "../components/cards/TBD";
+// import DailyForecast from "../components/cards/DailyForecast";
 
 const Landing = () => {
   const [city, setCity] = useState("New York");
   const [lat, setLat] = useState(40.7143);
   const [lon, setLon] = useState(-74.006);
+  const [unit, setUnit] = useState("metric");
 
   return (
     <LandingContainer>
@@ -31,12 +33,13 @@ const Landing = () => {
               <WeatherAlerts lat={lat} lon={lon} />
             </Col>
             <Col lg={4} xs={12}>
-              <WeatherMap lat={lat} lon={lon} />
+              <WeatherMap lat={lat} lon={lon} city={city} />
             </Col>
           </Row>
           <Row>
             <Col lg={8} xs={12}>
-              <WeeklyForecast city={city} />
+              <WeeklyForecast city={city} lat={lat} lon={lon} />
+              {/* <DailyForecast lat={lat} lon={lon} unit={unit} /> */}
             </Col>
             <Col lg={4} xs={12}>
               <TBD />
