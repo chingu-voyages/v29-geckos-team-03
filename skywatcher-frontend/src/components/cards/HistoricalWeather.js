@@ -19,7 +19,7 @@ const HistoricalWeather = ({ lat, lon, unit }) => {
     <StyledCard>
       <CardTitle>HistoricalWeather</CardTitle>
       {/* <Datetime onChange={(e) => setDateTime(e.target.value)} /> */}
-      {JSON.stringify(data.current)}
+      {/* {JSON.stringify(data.current)} */}
     </StyledCard>
   );
 };
