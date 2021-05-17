@@ -8,21 +8,59 @@ import AirPollution from "../components/cards/AirPollution";
 import WeatherMap from "../components/cards/WeatherMap";
 import WeatherAlerts from "../components/cards/WeatherAlerts";
 import WeeklyForecast from "../components/cards/WeeklyForecast";
-import TBD from "../components/cards/TBD";
-// import DailyForecast from "../components/cards/DailyForecast";
+import HourlyForecast from "../components/cards/HourlyForecast";
+import HistoricalWeather from "../components/cards/HistoricalWeather";
 
 const Landing = () => {
   const [city, setCity] = useState("New York");
   const [lat, setLat] = useState(40.7143);
   const [lon, setLon] = useState(-74.006);
   const [unit, setUnit] = useState("metric");
+  const [toggleCurrentHourly, setToggleCurrentHourly] = useState(true);
+
+  let unitDeg = unit === "metric" ? "C" : "F";
+
+  const handleCurrentHourlyDisplay = () => {
+    let newDisplay = !toggleCurrentHourly;
+    setToggleCurrentHourly(newDisplay);
+  };
+
+  const handleChangeCity = (newCity) => {
+    setCity(newCity);
+  };
+
+  const handleChangeCoordinates = (newLat, newLon) => {
+    setLat(newLat);
+    setLon(newLon);
+  };
+
+  const handleChangeUnit = (newUnit) => {
+    setUnit(newUnit);
+  };
 
   return (
     <LandingContainer>
-      <CityTimeHeader city={city} setCity={setCity} />
+      <CityTimeHeader
+        city={city}
+        lat={lat}
+        lon={lon}
+        unit={unit}
+        setCity={setCity}
+        handleChangeCoordinates={handleChangeCoordinates}
+        handleChangeCity={handleChangeCity}
+      />
       <Row>
         <Col lg={3} md={6} xs={12}>
-          <CurrentWeather city={city} />
+          {toggleCurrentHourly ? (
+            <HourlyForecast lat={lat} lon={lon} unit={unit} />
+          ) : (
+            <CurrentWeather
+              city={city}
+              unit={unit}
+              unitDeg={unitDeg}
+              handleChangeUnit={handleChangeUnit}
+            />
+          )}
         </Col>
         <Col lg={9} md={6} xs={12}>
           <Row>
@@ -39,10 +77,9 @@ const Landing = () => {
           <Row>
             <Col lg={8} xs={12}>
               <WeeklyForecast city={city} lat={lat} lon={lon} />
-              {/* <DailyForecast lat={lat} lon={lon} unit={unit} /> */}
             </Col>
             <Col lg={4} xs={12}>
-              <TBD />
+              <HistoricalWeather lat={lat} lon={lon} unit={unit} />
             </Col>
           </Row>
         </Col>

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useFetchAirPollution } from "../../services/ApiHelpers";
 import { CardTitle, StyledCard } from "../CustomStyling";
 
 const AirPollution = ({ lat, lon }) => {
-  const { data, error, loading } = useFetchAirPollution({ lat, lon });
-  const cities = [{ city: "newyork", lat: "40.7143", lon: "-74.006" }];
+  const { data, error, loading } = useFetchAirPollution(lat, lon);
 
   const defaultPollutant = [
     {
@@ -24,8 +23,6 @@ const AirPollution = ({ lat, lon }) => {
     { name: "SO2", value: 1.54, units: "μg/m3", alias: "Sulphur dioxide" },
     { name: "CO", value: 203.61, units: "pμg/m3", alias: "Carbon monoxide" },
   ];
-
-  const hello = "Hello World!";
 
   if (loading) return <p>Still Loading!</p>;
   if (error) throw error;
