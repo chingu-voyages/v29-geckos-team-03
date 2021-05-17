@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFetchHistoricalWeather } from "../../services/ApiHelpers";
 import { CardTitle, StyledCard } from "../CustomStyling";
+// import Datetime from "react-datetime";
 
 const HistoricalWeather = ({ lat, lon, unit }) => {
   const currentTime = parseInt(Date.now() / 1000);
@@ -17,6 +18,7 @@ const HistoricalWeather = ({ lat, lon, unit }) => {
   return (
     <StyledCard>
       <CardTitle>HistoricalWeather</CardTitle>
+      {/* <Datetime onChange={(e) => setDateTime(e.target.value)} /> */}
       {JSON.stringify(data.current)}
     </StyledCard>
   );

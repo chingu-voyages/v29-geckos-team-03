@@ -19,7 +19,7 @@ export const useFetchWeatherForecast = (city = cityName) =>
 
 export const useFetchAirPollution = (lat, lon) =>
   useFetch(
-    `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`
   );
 
 export const useFetchWeatherAlerts = (lat, lon) =>

@@ -52,7 +52,12 @@ const Landing = () => {
       <Row>
         <Col lg={3} md={6} xs={12}>
           {toggleCurrentHourly ? (
-            <HourlyForecast lat={lat} lon={lon} unit={unit} />
+            <HourlyForecast
+              lat={lat}
+              lon={lon}
+              unit={unit}
+              handleCurrentHourlyDisplay={handleCurrentHourlyDisplay}
+            />
           ) : (
             <CurrentWeather
               city={city}

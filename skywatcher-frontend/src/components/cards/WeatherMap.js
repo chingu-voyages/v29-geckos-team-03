@@ -40,7 +40,7 @@ const WeatherMap = ({ lat, lon, city }) => {
     const changeWeatherMap = () =>
       setWeatherMapUrl(tile_options.open_weather.tile_url);
     changeWeatherMap();
-  }, [layer, zoom, xTile, yTile]);
+  }, [tile_options.open_weather.tile_url]);
 
   return (
     <StyledCard>
