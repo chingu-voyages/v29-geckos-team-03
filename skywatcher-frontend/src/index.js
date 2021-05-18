@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ErrorBoundary from './error-handling/ErrorBoundary';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ErrorBoundary from "./error-handling/ErrorBoundary";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import "react-datetime/css/react-datetime.css";
 
 Sentry.init({
   dsn: "https://d9c8c150230448f8bb45e2899c26d593@o603652.ingest.sentry.io/5744555",
@@ -27,7 +28,7 @@ ReactDOM.render(
       </Router>
     </ErrorBoundary>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

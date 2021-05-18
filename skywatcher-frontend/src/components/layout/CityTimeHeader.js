@@ -2,23 +2,28 @@ import React, { useState, useEffect } from "react";
 import { Col, Row, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-
-import { distinctApiDays } from "../../services/DateHelpers";
 import {
-  CTHeaderDaysButton,
   CTHeader,
   CTHeaderTitle,
   CTHeaderTime,
   CTFormControl,
 } from "../CustomStyling";
-import { useFetchWeatherForecast } from "../../services/ApiHelpers";
+// import { useFetchWeatherDaily } from "../../services/ApiHelpers";
 
-const CityTimeHeader = ({ city, setCity }) => {
+const CityTimeHeader = ({
+  city,
+  lat,
+  lon,
+  unit,
+  setCity,
+  handleChangeCoordinates,
+  handleChangeCity,
+}) => {
   const [currentTime, setCurrentTime] = useState(Date());
   const [editState, setEditState] = useState(false);
   const [cityName, setCityName] = useState(city);
 
-  const { data, error, loading } = useFetchWeatherForecast(city);
+  // const { data, error, loading } = useFetchWeatherDaily(lat, lon, unit);
 
   useEffect(() => {
     let timer = setInterval(() => setCurrentTime(Date()), 1000);
@@ -33,8 +38,8 @@ const CityTimeHeader = ({ city, setCity }) => {
     setCity(e.target.value);
   };
 
-  if (loading) return <p>Still Loading!</p>;
-  if (error) throw error;
+  // if (loading) return <p>Still Loading!</p>;
+  // if (error) throw error;
   return (
     <CTHeader as={Row}>
       <Col md={6} xs={12}>
@@ -64,15 +69,15 @@ const CityTimeHeader = ({ city, setCity }) => {
       </Col>
       <Col md={6} xs={12}>
         <Row className="justify-content-center">
-          <CTHeaderTime>{currentTime}</CTHeaderTime>
+          <CTHeaderTime className="mt-3">{currentTime}</CTHeaderTime>
         </Row>
-        <Row className="justify-content-center">
+        {/* <Row className="justify-content-center">
           {distinctApiDays(data.list).map((dt, idx) => (
             <CTHeaderDaysButton key={`${dt}-${idx}-button`}>
               {dt}
             </CTHeaderDaysButton>
           ))}
-        </Row>
+        </Row> */}
       </Col>
     </CTHeader>
   );

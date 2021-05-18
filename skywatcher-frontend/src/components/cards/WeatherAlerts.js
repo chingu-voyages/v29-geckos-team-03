@@ -3,7 +3,7 @@ import { useFetchWeatherAlerts } from "../../services/ApiHelpers";
 import { CardTitle, StyledCard } from "../CustomStyling";
 
 const WeatherAlerts = ({ lat, lon }) => {
-  const { data, error, loading } = useFetchWeatherAlerts({ lat, lon });
+  const { data, error, loading } = useFetchWeatherAlerts(lat, lon);
 
   const alerts = [
     {

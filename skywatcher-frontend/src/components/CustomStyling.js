@@ -42,12 +42,13 @@ export const CTHeaderDaysButton = styled.button`
 
 // Generic Cards Styling
 export const StyledCard = styled(Card)`
-  padding: 5%;
+  padding: ${(props) => props.padding || "5%"};
   margin-top: 5vh;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  min-height: ${(props) => props.min_height || "30vh"};
+  height: ${(props) => props.height || "30vh"};
   text-align: center;
+  overflow: hidden;
 `;
 
 // Current Weather Card Specific Styling
