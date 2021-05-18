@@ -16,7 +16,7 @@ const Landing = () => {
   const [lat, setLat] = useState(40.7143);
   const [lon, setLon] = useState(-74.006);
   const [unit, setUnit] = useState("metric");
-  const [toggleCurrentHourly, setToggleCurrentHourly] = useState(true);
+  const [toggleCurrentHourly, setToggleCurrentHourly] = useState(false);
 
   let unitDeg = unit === "metric" ? "C" : "F";
 
