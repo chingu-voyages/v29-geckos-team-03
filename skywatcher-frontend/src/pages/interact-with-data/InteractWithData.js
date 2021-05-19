@@ -5,22 +5,26 @@ import useFetch from "../../services/UseFetch";
 import { HeaderContainer, HeaderText } from "./InteractWithData.style";
 
 const apis = {
-  openweather: {
-    name: "openweather",
+  WeatherForecast: {
+    name: "Weather Forecast",
     url: `https://api.openweathermap.org/data/2.5/forecast?q=New%20York&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
   },
   AirPollution: {
-    name: "AirPollution",
-    url: `http://api.openweathermap.org/data/2.5/air_pollution?lat=40.7143&lon=-74.006&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
+    name: "Air Pollution",
+    url: `https://api.openweathermap.org/data/2.5/air_pollution?lat=40.7143&lon=-74.006&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
   },
   WeatherAlerts: {
-    name: "WeatherAlerts",
+    name: "National Weather Alerts",
     url: `https://api.openweathermap.org/data/2.5/onecall?lat=40.7143&lon=-74.006&exclude=current,minutely,hourly,daily&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
+  },
+  Geolocation: {
+    name: "Geocoding",
+    url: `https://api.openweathermap.org/geo/1.0/direct?q=New%20York&limit=5&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`,
   },
 };
 
 const InteractWithData = () => {
-  const [apiUrl, setApiUrl] = useState(apis.openweather.url);
+  const [apiUrl, setApiUrl] = useState(apis.WeatherForecast.url);
   const [apiName, setApiName] = useState("");
   const { data, error, loading } = useFetch(apiUrl);
 
@@ -56,7 +60,7 @@ const InteractWithData = () => {
             >
               {Object.entries(apis).map((api, idx) => (
                 <option key={`api-list-${idx}`} value={api[1].url}>
-                  {api[0]}
+                  {api[1].name}
                 </option>
               ))}
             </Form.Control>
