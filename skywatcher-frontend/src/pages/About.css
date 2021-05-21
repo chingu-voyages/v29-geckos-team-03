@@ -1,0 +1,10 @@
+.about {
+  text-align: center;
+  justify-content: center;
+}
+
+.jumbotron {
+  text-align: center;
+  justify-content: center;
+  background-color: transparent !important;
+}
