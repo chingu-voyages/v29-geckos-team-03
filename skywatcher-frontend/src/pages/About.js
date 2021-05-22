@@ -1,4 +1,5 @@
 import React from "react";
+import { StyledCard } from "../components/CustomStyling";
 import {
   Container,
   Row,
@@ -12,7 +13,7 @@ const About = () => {
   return (
     <div className="About">
       <Container fluid="md">
-        <Jumbotron fluid className="jumbotron bg-transparent text-white">
+        <StyledCard>
           <Container>
             <h1>About Us</h1>
             <p>
@@ -23,11 +24,11 @@ const About = () => {
               <a href="https://openweathermap.org/">OpenWeatherMap</a> API data.
             </p>
           </Container>
-        </Jumbotron>
+        </StyledCard>
         <Row>
           <Col>
             <CardDeck>
-              <Card className="card bg-transparent text-white">
+              <StyledCard>
                 {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
                 <Card.Body>
                   <Card.Title>Eddy Banks</Card.Title>
@@ -43,13 +44,15 @@ const About = () => {
                 <Card.Footer>
                   <small className="text-muted">Located in Canada</small>
                 </Card.Footer>
-              </Card>
-              <Card className="card bg-transparent text-white">
+              </StyledCard>
+              <StyledCard>
                 {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
                 <Card.Body>
                   <Card.Title>Kalkidan Taye</Card.Title>
                   <Card.Text>
-                    <a href="https://github.com/KalkidanTaye">Kali's Github</a>
+                    <a href="https://github.com/KalkidanTaye">
+                      Visit Kali's Github
+                    </a>
                   </Card.Text>
                   <Card.Text>
                     Contact her by email, kali.taye@gmail.com
@@ -58,13 +61,15 @@ const About = () => {
                 <Card.Footer>
                   <small className="text-muted">Located in Canada</small>
                 </Card.Footer>
-              </Card>
-              <Card className="card bg-transparent text-white">
+              </StyledCard>
+              <StyledCard>
                 {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
                 <Card.Body>
                   <Card.Title>Kapre Mom</Card.Title>
                   <Card.Text>
-                    <a href="https://github.com/kapremom">Kapre's Github</a>
+                    <a href="https://github.com/kapremom">
+                      Visit Kapre's Github
+                    </a>
                   </Card.Text>
                   <Card.Text>
                     Contact her by email, kapremom@gmail.com
@@ -73,7 +78,7 @@ const About = () => {
                 <Card.Footer>
                   <small className="text-muted">Located in Virgina, USA</small>
                 </Card.Footer>
-              </Card>
+              </StyledCard>
             </CardDeck>
           </Col>
         </Row>
