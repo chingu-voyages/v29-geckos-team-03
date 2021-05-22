@@ -78,7 +78,6 @@ const About = () => {
           </Col>
         </Row>
       </Container>
-      s
     </div>
   );
 };

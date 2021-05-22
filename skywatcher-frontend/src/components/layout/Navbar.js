@@ -20,7 +20,7 @@ const Navbar = () => {
           <ReactBootStrap.Nav.Link as={Link} to="/interactwithdata">
             API Page
           </ReactBootStrap.Nav.Link>
-          <ReactBootStrap.Nav.Link eventKey={2} href="#about">
+          <ReactBootStrap.Nav.Link as={Link} to="/about">
             About
           </ReactBootStrap.Nav.Link>
         </ReactBootStrap.Nav>
