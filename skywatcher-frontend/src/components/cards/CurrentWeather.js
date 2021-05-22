@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-import { StyledCard, CWIcon, CWInfo, CardTitle } from "../CustomStyling";
+import { CWIcon, CWInfo, CardTitle } from "../CustomStyling";
 
 class CurrentWeather extends React.Component {
   state = {
@@ -32,32 +32,30 @@ class CurrentWeather extends React.Component {
       return <div>Sorry Didn't find Weather </div>;
     }
     return (
-      <StyledCard height="65vh">
-        <Card.Body>
-          <CWIcon
-            src={`http://openweathermap.org/img/w/${this.state.weatherIcon}.png`}
-            alt="Weather Icon"
-          />
-          <CardTitle> Feels Like </CardTitle>
-          <Card.Title id="degree">
-            {Number(this.state.feelsLike.feels_like).toFixed(0)}&deg;
+      <Card.Body>
+        <CWIcon
+          src={`http://openweathermap.org/img/w/${this.state.weatherIcon}.png`}
+          alt="Weather Icon"
+        />
+        <CardTitle> Feels Like </CardTitle>
+        <Card.Title id="degree">
+          {Number(this.state.feelsLike.feels_like).toFixed(0)}&deg;
+          {this.props.unitDeg}
+        </Card.Title>
+        <CWInfo>
+          <Card.Text>
+            H {Number(this.state.feelsLike.temp_max).toFixed(0)}&deg;
             {this.props.unitDeg}
-          </Card.Title>
-          <CWInfo>
-            <Card.Text>
-              H {Number(this.state.feelsLike.temp_max).toFixed(0)}&deg;
-              {this.props.unitDeg}
-            </Card.Text>
-            <Card.Text>
-              L {Number(this.state.feelsLike.temp_min).toFixed(0)}&deg;
-              {this.props.unitDeg}
-            </Card.Text>
-            <Card.Text>Precipitation: 100%</Card.Text>
-            <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
-            <Card.Text>Wind:{this.state.windSpeed}</Card.Text>
-          </CWInfo>
-        </Card.Body>
-      </StyledCard>
+          </Card.Text>
+          <Card.Text>
+            L {Number(this.state.feelsLike.temp_min).toFixed(0)}&deg;
+            {this.props.unitDeg}
+          </Card.Text>
+          <Card.Text>Precipitation: 100%</Card.Text>
+          <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
+          <Card.Text>Wind:{this.state.windSpeed}</Card.Text>
+        </CWInfo>
+      </Card.Body>
     );
   }
 }

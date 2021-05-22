@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import "../index.css";
 import { LandingContainer } from "./Landing.style";
 import CityTimeHeader from "../components/layout/CityTimeHeader";
@@ -10,6 +10,7 @@ import WeatherAlerts from "../components/cards/WeatherAlerts";
 import WeeklyForecast from "../components/cards/WeeklyForecast";
 import HourlyForecast from "../components/cards/HourlyForecast";
 import HistoricalWeather from "../components/cards/HistoricalWeather";
+import { StyledCard } from "../components/CustomStyling";
 
 const Landing = () => {
   const [city, setCity] = useState("New York");
@@ -51,21 +52,37 @@ const Landing = () => {
       />
       <Row>
         <Col lg={3} md={6} xs={12}>
-          {toggleCurrentHourly ? (
-            <HourlyForecast
-              lat={lat}
-              lon={lon}
-              unit={unit}
-              handleCurrentHourlyDisplay={handleCurrentHourlyDisplay}
-            />
-          ) : (
-            <CurrentWeather
-              city={city}
-              unit={unit}
-              unitDeg={unitDeg}
-              handleChangeUnit={handleChangeUnit}
-            />
-          )}
+          <StyledCard height="65vh" padding="15%">
+            <ButtonGroup>
+              <Button
+                variant="secondary"
+                onClick={() => setToggleCurrentHourly(false)}
+              >
+                Current
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => setToggleCurrentHourly(true)}
+              >
+                Hourly
+              </Button>
+            </ButtonGroup>
+            {toggleCurrentHourly ? (
+              <HourlyForecast
+                lat={lat}
+                lon={lon}
+                unit={unit}
+                handleCurrentHourlyDisplay={handleCurrentHourlyDisplay}
+              />
+            ) : (
+              <CurrentWeather
+                city={city}
+                unit={unit}
+                unitDeg={unitDeg}
+                handleChangeUnit={handleChangeUnit}
+              />
+            )}
+          </StyledCard>
         </Col>
         <Col lg={9} md={6} xs={12}>
           <Row>
