@@ -22,13 +22,18 @@ class CurrentWeather extends React.Component {
     });
     this.setState({ windSpeed: data.wind.speed, loading: false });
     this.setState({ weatherIcon: data.weather[0].icon, loading: false });
+    this.setState({
+      weatherDescription: data.weather[0].description,
+      loading: false,
+    });
+    console.log(data);
   }
 
   render() {
     if (this.state.loading) {
       return <div>...Loading</div>;
     }
-    if (this.state.main) {
+    if (!this.state.feelsLike.feels_like) {
       return <div>Sorry Didn't find Weather </div>;
     }
     return (
@@ -37,6 +42,7 @@ class CurrentWeather extends React.Component {
           src={`http://openweathermap.org/img/w/${this.state.weatherIcon}.png`}
           alt="Weather Icon"
         />
+        <Card.Text>{this.state.weatherDescription}</Card.Text>
         <CardTitle> Feels Like </CardTitle>
         <Card.Title id="degree">
           {Number(this.state.feelsLike.feels_like).toFixed(0)}&deg;
@@ -51,7 +57,6 @@ class CurrentWeather extends React.Component {
             L {Number(this.state.feelsLike.temp_min).toFixed(0)}&deg;
             {this.props.unitDeg}
           </Card.Text>
-          <Card.Text>Precipitation: 100%</Card.Text>
           <Card.Text>Humidity: {this.state.feelsLike.humidity} </Card.Text>
           <Card.Text>Wind:{this.state.windSpeed}</Card.Text>
         </CWInfo>
