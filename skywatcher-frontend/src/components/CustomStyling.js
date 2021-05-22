@@ -12,7 +12,7 @@ export const CTHeader = styled.header`
   color: white;
 `;
 export const CTHeaderTitle = styled.h2`
-  font-size: 2em;
+  font-size: ${(props) => props.size || "1.3em"};
 `;
 export const CTFormControl = styled(FormControl)`
   color: white;
