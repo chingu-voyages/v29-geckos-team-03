@@ -46,7 +46,7 @@ const AirPollution = ({ lat, lon }) => {
       <h1>{data.list[0].main.aqi}</h1>
       <span className="mt-auto">{pollutantNames[pollutant]}</span>
       <h3>{data.list[0].components[pollutant]}</h3>
-      <ButtonGroup toggle className="mt-auto">
+      <ButtonGroup toggle className="mt-auto mr-auto ml-auto mb-auto">
         {Object.entries(data.list[0].components).map((k, v) => (
           <ToggleButton
             size="sm"

@@ -19,12 +19,25 @@ const WeatherAlerts = ({ lat, lon }) => {
   return (
     <StyledCard>
       <CardTitle>Weather Alerts</CardTitle>
-      <>
+      {/* <>
         <p>Timezone: {alerts[0].timezone}</p>
-        <p>Latuide: {alerts[0].lat}</p>
+        <p>Latitude: {alerts[0].lat}</p>
         <p>Longitude: {alerts[0].lon}</p>
         <p>Timezone offset: {alerts[0].timezone_offset}</p>
-      </>
+      </> */}
+      {data.alerts ? (
+        data.alerts.map((alert, idx) => (
+          <div id={`alert-${idx}`} className="mt-auto mb-auto">
+            <p>Sender: {alert.sender}</p>
+            <p>Event: {alert.event}</p>
+            <p>Description: {alert.description}</p>
+          </div>
+        ))
+      ) : (
+        <h6 className="mt-auto mb-auto">
+          No Weather Alerts in the Area Currently
+        </h6>
+      )}
     </StyledCard>
   );
 };

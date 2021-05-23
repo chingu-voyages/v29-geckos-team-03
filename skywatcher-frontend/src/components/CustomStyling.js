@@ -51,10 +51,34 @@ export const StyledCard = styled(Card)`
   overflow: hidden;
 `;
 
+export const StyledCardBody = styled(Card.Body)`
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: 0;
+  ::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 0.2rem;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+`;
 // Current Weather Card Specific Styling
 export const CWIcon = styled.img`
-  margin: 15% 0 10% 0;
-  width: 50%;
+  width: 60%;
 `;
 export const CWInfo = styled.div`
   font-size: 1em;

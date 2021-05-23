@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import { useFetchWeatherHourly } from "../../services/ApiHelpers";
-import { ToDayShort, ToTime } from "../../services/DateHelpers";
+import { ToTime } from "../../services/DateHelpers";
+import { StyledCardBody } from "../CustomStyling";
 
 const HourlyForecast = ({ lat, lon, unit }) => {
   const { data, error, loading } = useFetchWeatherHourly(lat, lon, unit);
@@ -11,9 +12,9 @@ const HourlyForecast = ({ lat, lon, unit }) => {
   console.log(data);
 
   return (
-    <Card.Body id="hourly-forcast">
+    <StyledCardBody id="hourly-forcast" className="mt-3 mb-3">
       {data.hourly.map((item, idx) => (
-        <Row key={`hourly-${idx}`}>
+        <Row key={`hourly-${idx}`} className="mr-0 ml-0">
           <p id="hourly-temp">
             {ToTime(item.dt)}:
             <img
@@ -24,7 +25,7 @@ const HourlyForecast = ({ lat, lon, unit }) => {
           </p>
         </Row>
       ))}
-    </Card.Body>
+    </StyledCardBody>
   );
 };
 

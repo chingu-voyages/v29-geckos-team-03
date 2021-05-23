@@ -15,8 +15,10 @@ export const ToDay = (dt) =>
 // Extract the time from the dt element in an API list e.g. ToDate(1620410400) gives you Friday
 export const ToTime = (dt) => {
   const someDate = new Date(parseInt(dt + "000"));
-  return someDate.getHours() < 12
-    ? someDate.getHours() + " AM"
+  return someDate.getHours() < 13
+    ? someDate.getHours() === 12
+      ? someDate.getHours() + " PM"
+      : someDate.getHours() + " AM"
     : someDate.getHours() - 12 + " PM";
 };
 

@@ -24,8 +24,11 @@ const HistoricalWeather = ({ lat, lon, unit }) => {
   // if (loading) return <p>Still Loading!</p>;
   return (
     <StyledCard>
-      <CardTitle>Historical Weather</CardTitle>
-      <Form>
+      <CardTitle className="mt-auto mb-auto">
+        {" "}
+        Upcoming Historical Weather Feature!
+      </CardTitle>
+      {/* <Form>
         <Form.Group as={Row}>
           <Form.Label column sm="3">
             Date
@@ -66,7 +69,7 @@ const HistoricalWeather = ({ lat, lon, unit }) => {
         <Button variant="secondary" block>
           Fetch Data
         </Button>
-      </Form>
+      </Form> */}
     </StyledCard>
   );
 };

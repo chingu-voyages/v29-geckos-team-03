@@ -57,7 +57,7 @@ const Landing = () => {
       />
       <Row>
         <Col lg={3} md={6} xs={12}>
-          <StyledCard height="65vh" padding="15%">
+          <StyledCard height="65vh" padding="10% 5%">
             <ButtonGroup toggle>
               {currentHourlyButtons.map((weatherBtn, idx) => (
                 <ToggleButton
