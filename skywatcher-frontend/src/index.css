@@ -68,18 +68,15 @@ i {
 
 #hourly-forcast {
   overflow-y: scroll;
-}
-#hourly-img {
-  margin-top: -10px;
-  margin-left: 25px;
-}
-#hourly-temp {
-  margin-left: 80px;
-  font-size: 20px;
-  font-weight: bold;
+  margin: 0 auto;
+  font-size: 18px;
 }
 
-#hourly-feelsLike {
-  margin-top: -15px;
-  margin-left: 35px;
+#hourly-temp img {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#hourly-temp p {
+  font-size: 10px;
 }
