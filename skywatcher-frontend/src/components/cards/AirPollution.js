@@ -35,7 +35,7 @@ const AirPollution = ({ lat, lon }) => {
     { name: "O3", value: 101.57, units: "μg/m3", alias: "Ozone" },
     { name: "NO2", value: 3.51, units: "μg/m3", alias: "Nitrogen dioxide" },
     { name: "SO2", value: 1.54, units: "μg/m3", alias: "Sulphur dioxide" },
-    { name: "CO", value: 203.61, units: "pμg/m3", alias: "Carbon monoxide" },
+    { name: "CO", value: 203.61, units: "μg/m3", alias: "Carbon monoxide" },
   ];
 
   if (loading) return <p>Still Loading!</p>;
