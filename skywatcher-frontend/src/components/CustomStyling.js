@@ -44,7 +44,7 @@ export const CTHeaderDaysButton = styled.button`
 export const StyledCard = styled(Card)`
   padding: ${(props) => props.padding || "5%"};
   margin-top: 5vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: ${(props) => props.bgcolor || "rgba(0, 0, 0, 0.4)"};
   color: white;
   height: ${(props) => props.height || "30vh"};
   text-align: center;
