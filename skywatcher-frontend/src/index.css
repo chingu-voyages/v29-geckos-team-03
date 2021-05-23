@@ -34,14 +34,6 @@ i {
   height: 80px;
 }
 
-.card {
-  /* box-shadow: 5px 10px 10px 1px rgba(190,190,190,1)!important */
-}
-
-.card:hover {
-  /* box-shadow: 5px 10px 20px 1px rgba(190,190,190,1)!important */
-}
-
 .current-weather {
   padding-right: 50px;
 }
@@ -72,4 +64,19 @@ i {
 
 .weather-info {
   margin-left: 20px;
+}
+
+#hourly-forcast {
+  overflow-y: scroll;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+#hourly-temp img {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#hourly-temp p {
+  font-size: 10px;
 }
