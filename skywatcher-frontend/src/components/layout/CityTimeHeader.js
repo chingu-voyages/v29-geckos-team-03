@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import {
   CTHeader,
   CTHeaderTitle,
@@ -60,6 +60,15 @@ const CityTimeHeader = ({
               <CTFormControl
                 value={cityName}
                 onChange={(e) => setCityName(e.target.value)}
+              />{" "}
+              <FontAwesomeIcon
+                icon={faEdit}
+                style={{
+                  fontSize: ".8rem",
+                  marginBottom: ".8rem",
+                  marginRight: ".8rem",
+                }}
+                onClick={() => setEditState(true)}
               />
             </Form>
           ) : (
