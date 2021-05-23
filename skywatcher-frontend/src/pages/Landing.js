@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { Row, Col, ToggleButton, ButtonGroup } from "react-bootstrap";
 import "../index.css";
 import { LandingContainer } from "./Landing.style";
 import CityTimeHeader from "../components/layout/CityTimeHeader";
@@ -17,13 +17,18 @@ const Landing = () => {
   const [lat, setLat] = useState(40.7143);
   const [lon, setLon] = useState(-74.006);
   const [unit, setUnit] = useState("metric");
-  const [toggleCurrentHourly, setToggleCurrentHourly] = useState(false);
+  const [currentHourly, setCurrentHourly] = useState("1");
+
+  const currentHourlyButtons = [
+    { name: "Current", value: "1" },
+    { name: "Hourly", value: "2" },
+  ];
 
   let unitDeg = unit === "metric" ? "C" : "F";
 
   const handleCurrentHourlyDisplay = () => {
-    let newDisplay = !toggleCurrentHourly;
-    setToggleCurrentHourly(newDisplay);
+    let newDisplay = !currentHourly;
+    setCurrentHourly(newDisplay);
   };
 
   const handleChangeCity = (newCity) => {
@@ -53,33 +58,34 @@ const Landing = () => {
       <Row>
         <Col lg={3} md={6} xs={12}>
           <StyledCard height="65vh" padding="15%">
-            <ButtonGroup>
-              <Button
-                variant="secondary"
-                onClick={() => setToggleCurrentHourly(false)}
-              >
-                Current
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={() => setToggleCurrentHourly(true)}
-              >
-                Hourly
-              </Button>
+            <ButtonGroup toggle>
+              {currentHourlyButtons.map((weatherBtn, idx) => (
+                <ToggleButton
+                  key={`weatherBtn-${idx}`}
+                  type="radio"
+                  variant="secondary"
+                  name="weatherBtn"
+                  value={weatherBtn.value}
+                  checked={currentHourly === weatherBtn.value}
+                  onChange={(e) => setCurrentHourly(e.currentTarget.value)}
+                >
+                  {weatherBtn.name}
+                </ToggleButton>
+              ))}
             </ButtonGroup>
-            {toggleCurrentHourly ? (
-              <HourlyForecast
-                lat={lat}
-                lon={lon}
-                unit={unit}
-                handleCurrentHourlyDisplay={handleCurrentHourlyDisplay}
-              />
-            ) : (
+            {currentHourly === "1" ? (
               <CurrentWeather
                 city={city}
                 unit={unit}
                 unitDeg={unitDeg}
                 handleChangeUnit={handleChangeUnit}
+              />
+            ) : (
+              <HourlyForecast
+                lat={lat}
+                lon={lon}
+                unit={unit}
+                handleCurrentHourlyDisplay={handleCurrentHourlyDisplay}
               />
             )}
           </StyledCard>
