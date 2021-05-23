@@ -4,7 +4,7 @@ import { useFetchAirPollution } from "../../services/ApiHelpers";
 import { CardTitle, StyledCard } from "../CustomStyling";
 
 const AirPollution = ({ lat, lon }) => {
-  const { data, error, loading } = useFetchAirPollution({ lat, lon });
+  const { data, error, loading } = useFetchAirPollution(lat, lon);
 
   const [pollutant, setPollutant] = useState("co");
 
@@ -44,7 +44,7 @@ const AirPollution = ({ lat, lon }) => {
     <StyledCard>
       <CardTitle className="mt-auto">Air Quality Index</CardTitle>
       <h1>{data.list[0].main.aqi}</h1>
-      <emph className="mt-auto">{pollutantNames[pollutant]}</emph>
+      <span className="mt-auto">{pollutantNames[pollutant]}</span>
       <h3>{data.list[0].components[pollutant]}</h3>
       <ButtonGroup toggle className="mt-auto">
         {Object.entries(data.list[0].components).map((k, v) => (
