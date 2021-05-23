@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { ButtonGroup, ToggleButton } from "react-bootstrap";
 import { useFetchAirPollution } from "../../services/ApiHelpers";
 import { CardTitle, StyledCard } from "../CustomStyling";
 
 const AirPollution = ({ lat, lon }) => {
   const { data, error, loading } = useFetchAirPollution(lat, lon);
 
+  const [pollutant, setPollutant] = useState("co");
+
+  const pollutantNames = {
+    co: "Carbon Monoxide",
+    no: "Nitrogen Monoxide",
+    no2: "Nitrogen Dioxide",
+    o3: "Ozone",
+    so2: "Sulphur Dioxide",
+    pm2_5: "Fine Particles Matter",
+    pm10: "Coarse Particulate Matter",
+    nh3: "Ammonia",
+  };
+
   const defaultPollutant = [
     {
-      name: "PM2.5",
+      name: "pm2_5",
       value: 1.39,
       units: "µg/m3",
       alias: "Fine particles matter",
     },
     {
-      name: "PM10",
+      name: "pm10",
       value: 1.94,
       units: "μg/m3",
-      alias: "Coarse partucles matter",
+      alias: "Coarse particles matter",
     },
     { name: "O3", value: 101.57, units: "μg/m3", alias: "Ozone" },
     { name: "NO2", value: 3.51, units: "μg/m3", alias: "Nitrogen dioxide" },
@@ -28,21 +42,33 @@ const AirPollution = ({ lat, lon }) => {
   if (error) throw error;
   return (
     <StyledCard>
-      <CardTitle>Air Pollution</CardTitle>
-      {/* Object.entries(data.list[0].components).map((k, v) => (
-        <>
-          <p>
-            {k[0]}: {k[1]}
-          </p>
-        </>
-       )) */}
-      {defaultPollutant.map((item) => (
+      <CardTitle className="mt-auto">Air Quality Index</CardTitle>
+      <h1>{data.list[0].main.aqi}</h1>
+      <span className="mt-auto">{pollutantNames[pollutant]}</span>
+      <h3>{data.list[0].components[pollutant]}</h3>
+      <ButtonGroup toggle className="mt-auto">
+        {Object.entries(data.list[0].components).map((k, v) => (
+          <ToggleButton
+            size="sm"
+            type="radio"
+            variant="dark"
+            name="pollutant"
+            value={k[0]}
+            checked={pollutant === k[0]}
+            onChange={(e) => setPollutant(e.currentTarget.value)}
+          >
+            {k[0]}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
+
+      {/* {defaultPollutant.map((item) => (
         <>
           <p>
             {item.alias},{item.name},{item.value},{item.units}
           </p>
         </>
-      ))}
+      ))} */}
     </StyledCard>
   );
 };

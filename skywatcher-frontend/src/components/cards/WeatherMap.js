@@ -12,7 +12,7 @@ const layers = [
 ];
 
 const WeatherMap = ({ lat, lon, city }) => {
-  const [layer, setLayer] = useState("precipitation_new");
+  const [layer, setLayer] = useState("temp_new");
   const [zoom, xTile, yTile] = [2, 1, 1];
   const [weatherMapUrl, setWeatherMapUrl] = useState("");
 
@@ -44,7 +44,7 @@ const WeatherMap = ({ lat, lon, city }) => {
 
   return (
     <StyledCard>
-      <Form>
+      {/* <Form>
         <Form.Control
           as="select"
           defaultValue="Select Map Layer"
@@ -56,7 +56,7 @@ const WeatherMap = ({ lat, lon, city }) => {
             </option>
           ))}
         </Form.Control>
-      </Form>
+      </Form> */}
       <MapContainer
         center={[lat, lon]}
         zoom={13}
@@ -67,7 +67,7 @@ const WeatherMap = ({ lat, lon, city }) => {
           attribution={tile_options.open_street_map.attribution}
           url={tile_options.open_street_map.tile_url}
         />
-        {openWeatherTileDisplay()}
+        {/* {openWeatherTileDisplay()} */}
         <Marker position={[lat, lon]}>
           <Popup>
             <h6>{city}</h6>
