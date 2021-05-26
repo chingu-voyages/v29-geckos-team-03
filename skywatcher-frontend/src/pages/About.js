@@ -15,8 +15,7 @@ const About = () => {
               created a New York based weather application called, SkyWalker.{" "}
               <br />
               Skywalker was created using{" "}
-              <Link to="https://openweathermap.org/">OpenWeatherMap</Link> API
-              data.
+              <a href="https://openweathermap.org/">OpenWeatherMap</a> API data.
             </p>
           </Container>
         </StyledCard>
@@ -28,9 +27,9 @@ const About = () => {
                 <Card.Body>
                   <Card.Title>Edwin Agbenyega</Card.Title>
                   <Card.Text>
-                    <Link to="https://github.com/eddybanks">
+                    <a href="https://github.com/eddybanks">
                       Visit Eddy's Github
-                    </Link>
+                    </a>
                   </Card.Text>
                   <Card.Text>
                     Contact him by email, eddy.devv@gmail.com

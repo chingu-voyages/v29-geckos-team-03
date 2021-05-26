@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { StyledCard } from "../CustomStyling";
-import { Form } from "react-bootstrap";
+// import { Form } from "react-bootstrap";
 
 const layers = [
   { label: "Temperature", type: "temp_new" },
