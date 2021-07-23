@@ -93,7 +93,7 @@ const CityTimeHeader = ({ city, setCity }) => {
             </Form>
           ) : (
             <Row>
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 icon={faEdit}
                 style={{
                   fontSize: ".8rem",
@@ -101,7 +101,7 @@ const CityTimeHeader = ({ city, setCity }) => {
                   marginRight: ".8rem",
                 }}
                 onClick={() => setEditState(true)}
-              />
+              /> */}
               <h3>{cityName}</h3>
             </Row>
           )}

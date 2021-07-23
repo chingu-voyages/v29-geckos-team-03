@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ButtonGroup, ToggleButton } from "react-bootstrap";
 import { useFetchAirPollution } from "../../services/ApiHelpers";
-import { CardTitle, StyledCard } from "../CustomStyling";
+import { CardTitle, StyledCard, SubUnit } from "../CustomStyling";
 
 const AirPollution = ({ lat, lon }) => {
   const { data, error, loading } = useFetchAirPollution(lat, lon);
@@ -9,14 +9,14 @@ const AirPollution = ({ lat, lon }) => {
   const [pollutant, setPollutant] = useState("co");
 
   const pollutantNames = {
-    co: "Carbon Monoxide",
-    no: "Nitrogen Monoxide",
-    no2: "Nitrogen Dioxide",
-    o3: "Ozone",
-    so2: "Sulphur Dioxide",
-    pm2_5: "Fine Particles Matter",
-    pm10: "Coarse Particulate Matter",
-    nh3: "Ammonia",
+    co: { name: "Carbon Monoxide", units: "µg/m3" },
+    no: { name: "Nitrogen Monoxide", units: "µg/m3" },
+    no2: { name: "Nitrogen Dioxide", units: "µg/m3" },
+    o3: { name: "Ozone", units: "µg/m3" },
+    so2: { name: "Sulphur Dioxide", units: "µg/m3" },
+    pm2_5: { name: "Fine Particles Matter", units: "µg/m3" },
+    pm10: { name: "Coarse Particulate Matter", units: "µg/m3" },
+    nh3: { name: "Ammonia", units: "µg/m3" },
   };
 
   const defaultPollutant = [
@@ -44,8 +44,11 @@ const AirPollution = ({ lat, lon }) => {
     <StyledCard>
       <CardTitle className="mt-auto">Air Quality Index</CardTitle>
       <h1>{data.list[0].main.aqi}</h1>
-      <span className="mt-auto">{pollutantNames[pollutant]}</span>
-      <h3>{data.list[0].components[pollutant]}</h3>
+      <span className="mt-auto">{pollutantNames[pollutant].name}</span>
+      <h3>
+        {data.list[0].components[pollutant]}
+        <SubUnit>{pollutantNames[pollutant].units}</SubUnit>
+      </h3>
       <ButtonGroup toggle className="mt-auto mr-auto ml-auto mb-auto">
         {Object.entries(data.list[0].components).map((k, v) => (
           <ToggleButton

@@ -98,3 +98,7 @@ export const StyledFooter = styled.footer`
   font-size: 1rem;
   padding: 1%;
 `;
+
+export const SubUnit = styled.sub`
+  font-size: 0.5em;
+`;
