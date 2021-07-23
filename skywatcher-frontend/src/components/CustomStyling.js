@@ -102,3 +102,7 @@ export const StyledFooter = styled.footer`
 export const SubUnit = styled.sub`
   font-size: 0.5em;
 `;
+
+export const SupUnit = styled.sup`
+  font-size: 0.5em;
+`;
